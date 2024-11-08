@@ -33,4 +33,4 @@ Developmental builds can be run on the laptop with `go run . -tags mobile app.go
 
 ## A note on the binary name
 
-the resulting .apk file will be after the go module name, automatically. 
+the resulting .apk file will be after `Name` property in [FyneApp.toml](FyneApp.toml). The build number increases on each run of `make build-android` or `fyne package` 

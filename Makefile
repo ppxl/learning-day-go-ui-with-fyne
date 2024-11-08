@@ -11,7 +11,7 @@ build-linux: ${TARGET_DIR}
 	@cd ${TARGET_DIR} && fyne package -os linux -icon ${WORKDIR}/resources/avatar.png --sourceDir ${WORKDIR}
 
 build-android: ${TARGET_DIR}
-	@fyne package -os android -appID ${ARTEFACT_ID} -icon resources/avatar.png
+	@fyne package -os android
 
 install-android: ${TARGET_DIR}
-	@fyne install -os android -appID ${ARTEFACT_ID} -icon resources/avatar.png
+	@fyne install -os android

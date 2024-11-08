@@ -1,0 +1,14 @@
+Website = "https://github.com/ppxl/learning-day-go-ui-with-fyne"
+
+[Details]
+  Icon = "resources/avatar.png"
+  Name = "larningday2024"
+  ID = "com.example.app"
+  Version = "1.0.0"
+  Build = 2
+
+[LinuxAndBSD]
+GenericName = "Silly app"
+Categories = ["Misc"]
+Comment = "Do things"
+Keywords = ["browser", "web"]
