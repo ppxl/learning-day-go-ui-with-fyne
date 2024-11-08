@@ -1,4 +1,4 @@
-module github.com/ppxl/learning-day-go-ui-with-fyne
+module github.com/ppxl/learningday2024
 
 go 1.23.2
 
