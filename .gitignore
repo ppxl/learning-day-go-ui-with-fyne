@@ -8,6 +8,7 @@
 *.so
 *.dylib
 target/
+vandor/
 
 # Test binary, built with `go test -c`
 *.test
