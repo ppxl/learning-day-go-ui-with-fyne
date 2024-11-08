@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/layout"
 	"time"
 
 	"fyne.io/fyne/v2/app"
@@ -15,12 +17,14 @@ func updateTime(clock *widget.Label) {
 
 func main() {
 	a := app.New()
-	w := a.NewWindow("Clock")
-
+	w := a.NewWindow("Boxed input Clock")
+	ui, entry := makeUI()
 	clock := widget.NewLabel("")
+	content := container.New(layout.NewVBoxLayout(), ui, entry, layout.NewSpacer(), clock)
+
 	updateTime(clock)
 
-	w.SetContent(clock)
+	w.SetContent(content)
 	go func() {
 		for range time.Tick(time.Second) {
 			updateTime(clock)
@@ -29,4 +33,14 @@ func main() {
 	w.ShowAndRun()
 
 	fmt.Println("Exited")
+}
+
+func makeUI() (*widget.Label, *widget.Entry) {
+	out := widget.NewLabel("Hello world!")
+	in := widget.NewEntry()
+
+	in.OnChanged = func(content string) {
+		out.SetText("Hello " + content + "!")
+	}
+	return out, in
 }
