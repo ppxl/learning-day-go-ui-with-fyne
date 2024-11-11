@@ -27,6 +27,9 @@ func main() {
 		baseContainer.RemoveAll()
 		baseContainer.Add(widget.NewLabel("oh hello"))
 		backButton := widget.NewButtonWithIcon("return", theme.NavigateBackIcon(), func() {
+			// TODO current problem: I have no idea how to fix the problem of cyclical functional dependencies
+			// this code adds the clock but no longer is the same as the previous call because I need to get hold of the
+			// clock container containing this button ... ad infinitem lol
 			baseContainer.RemoveAll()
 			baseContainer.Add(clock)
 		})
